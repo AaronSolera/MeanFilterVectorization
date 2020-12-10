@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <math.h>
+//#include <arm_neon.h>
 
 #include <allegro5/allegro_primitives.h>
 #include <allegro5/allegro_image.h>
