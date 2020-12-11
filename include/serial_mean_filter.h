@@ -21,7 +21,7 @@
 //functions
 unsigned char *** createMatrix(ALLEGRO_BITMAP *image);
 unsigned char *** allocateMemorySpaceForImage(const int * ptr_height, const  int * ptr_width);
-void medianFilter(const int * ptr_height, const int * ptr_width, unsigned char *** input_img, unsigned char *** output_img);
+void meanFilter(const int * ptr_height, const int * ptr_width, unsigned char *** input_img, unsigned char *** output_img);
 int calculateMedian(unsigned char * arr, int length);
 void generateBitmapImage(int height, int width, unsigned char *** image, char * imageFileName);
 unsigned char * createBitmapFileHeader(int height, int width, int paddingSize);

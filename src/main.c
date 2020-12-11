@@ -43,13 +43,13 @@ void filter_analysis(char * input_path, char * output_path, char * csv_path){
 	for (int temp_width = 1; temp_width <= ptr_width; ++temp_width)
 	{
 		begin = clock();
-		medianFilter(&ptr_height, &temp_width, input_img, output_img);
+		meanFilter(&ptr_height, &temp_width, input_img, output_img);
 		end = clock();
 
 		serial_time = (float)(end - begin) / CLOCKS_PER_SEC;
 
 		begin = clock();
-		// medianFilterNeon(&ptr_height, &temp_width, input_img, output_img);
+		// meanFilterNeon(&ptr_height, &temp_width, input_img, output_img);
 		end = clock();
 
 		parallel_time = (float)(end - begin) / CLOCKS_PER_SEC;
