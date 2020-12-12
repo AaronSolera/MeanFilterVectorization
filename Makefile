@@ -7,5 +7,4 @@ ALLEGRO_FLAGS = -lallegro -lallegro_image -lallegro_primitives
 all: main
 
 main:
-	$(CC) -o ./bin/main ./src/main.c ./src/serial_mean_filter.c $(ALLEGRO_FLAGS) -lm && ./bin/main
 	$(CC) -o ./bin/main ./src/main.c ./src/serial_mean_filter.c $(ALLEGRO_FLAGS) $(NEON) -lm && ./bin/main

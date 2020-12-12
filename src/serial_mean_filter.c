@@ -133,14 +133,14 @@ void meanFilterNeon(const int * ptr_height, const int * ptr_width, unsigned char
                 int x = i - scaled_filter_size;
                 int y = j - scaled_filter_size;
                 // Getting matrix neighborhood 
-                neighborhood = {input_img[x][y][R_CHANNEL], 
-                                input_img[x][y + 1][R_CHANNEL], 
-                                input_img[x][y + 2][R_CHANNEL], 
-                                input_img[x + 1][y][R_CHANNEL],
-                                input_img[x + 1][y + 1][R_CHANNEL], 
-                                input_img[x + 1][y + 2][R_CHANNEL], 
-                                input_img[x + 2][y][R_CHANNEL], 
-                                input_img[x + 2][y + 1][R_CHANNEL]};
+                neighborhood[0] = input_img[x][y][R_CHANNEL];
+                neighborhood[1] = input_img[x][y + 1][R_CHANNEL]; 
+                neighborhood[2] = input_img[x][y + 2][R_CHANNEL]; 
+                neighborhood[3] = input_img[x + 1][y][R_CHANNEL];
+                neighborhood[4] = input_img[x + 1][y + 1][R_CHANNEL]; 
+                neighborhood[5] = input_img[x + 1][y + 2][R_CHANNEL]; 
+                neighborhood[6] = input_img[x + 2][y][R_CHANNEL]; 
+                neighborhood[7] = input_img[x + 2][y + 1][R_CHANNEL];
                 // Get first 8 array elements into an 8 elements vector
                 v_a = vld1_u16(neighborhood);
                 v_b = vld1_u16(neighborhood + 4);
