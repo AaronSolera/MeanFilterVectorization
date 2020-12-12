@@ -71,7 +71,7 @@ void meanFilter(const int * ptr_height, const int * ptr_width, unsigned char ***
     int scaled_filter_size = WINDOW_FILTER_SIZE / 2;
     int neighborhood_size = WINDOW_FILTER_SIZE * WINDOW_FILTER_SIZE;
     double sum;
-    float progress_counter = 0;
+    // float progress_counter = 0;
     //Go throughout the pixels of the image
     for (int i = 0; i < *ptr_height; i++)
         for (int j = 0; j < *ptr_width; j++)
@@ -80,8 +80,8 @@ void meanFilter(const int * ptr_height, const int * ptr_width, unsigned char ***
                 (j >= scaled_filter_size && j <= *ptr_width - scaled_filter_size - 1))
             {
                 // Progress measurement
-                printf("\rProgress : %f", (float)(progress_counter / ((*ptr_width) * (*ptr_height))) * 100);
-                progress_counter++;
+                // printf("\rProgress : %f", (float)(progress_counter / ((*ptr_width) * (*ptr_height))) * 100);
+                // progress_counter++;
                 sum = 0;
                 //Go throughout the neighborhood of the current pixel
                 for (int x = i - scaled_filter_size, nx = 0; nx < WINDOW_FILTER_SIZE; x++, nx++)
@@ -116,7 +116,7 @@ void meanFilterNeon(const int * ptr_height, const int * ptr_width, unsigned char
 {
     int scaled_filter_size = WINDOW_FILTER_SIZE / 2;
     int neighborhood_size = WINDOW_FILTER_SIZE * WINDOW_FILTER_SIZE;
-    float progress_counter = 0;
+    // float progress_counter = 0;
     uint16_t neighborhood[8];
     //Go throughout the pixels of the image
     for (int i = 0; i < *ptr_height; i++)
@@ -127,8 +127,8 @@ void meanFilterNeon(const int * ptr_height, const int * ptr_width, unsigned char
                 (j >= scaled_filter_size && j <= *ptr_width - scaled_filter_size - 1))
             {
                 // Progress measurement
-                printf("\rProgress : %f", (float)(progress_counter / ((*ptr_width) * (*ptr_height))) * 100);
-                progress_counter++;
+                // printf("\rProgress : %f", (float)(progress_counter / ((*ptr_width) * (*ptr_height))) * 100);
+                // progress_counter++;
                 // Computing x and y neighborhood initial position
                 int x = i - scaled_filter_size;
                 int y = j - scaled_filter_size;
