@@ -49,7 +49,7 @@ void filter_analysis(char * input_path, char * output_path, char * csv_path){
 		serial_time = (float)(end - begin) / CLOCKS_PER_SEC;
 
 		begin = clock();
-		// meanFilterNeon(&ptr_height, &temp_width, input_img, output_img);
+		meanFilterNeon(&ptr_height, &temp_width, input_img, output_img);
 		end = clock();
 
 		parallel_time = (float)(end - begin) / CLOCKS_PER_SEC;
@@ -90,6 +90,7 @@ int main(int argc, void *argv[]) {
 	al_init_primitives_addon();
 
 	filter_analysis("images/butterfly.png", "images/butterfly.bmp", "butterfly_execution_time.csv");
+	filter_analysis("images/radiograph.png", "images/radiograph.bmp", "radiograph_execution_time.csv");
 
 	/*
 	// Initialize the timer

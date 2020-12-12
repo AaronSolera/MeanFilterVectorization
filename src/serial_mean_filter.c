@@ -106,7 +106,6 @@ void meanFilter(const int * ptr_height, const int * ptr_width, unsigned char ***
         }
 }
 
-/*
 uint16x4_t v_a, v_b;
 uint16x4_t v16_result;
 uint32x2_t v32_result; 
@@ -167,7 +166,6 @@ void meanFilterNeon(const int * ptr_height, const int * ptr_width, unsigned char
         }
     }
 }
-*/
 
 //----------------------------------------------------------------------------------------------------------------------
 // FUNCTIONS FOR SAVE BITMAP IMAGE

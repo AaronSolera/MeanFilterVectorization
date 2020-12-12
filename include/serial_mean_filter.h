@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <math.h>
-//#include <arm_neon.h>
+#include <arm_neon.h>
 
 #include <allegro5/allegro_primitives.h>
 #include <allegro5/allegro_image.h>
@@ -22,7 +22,7 @@
 unsigned char *** createMatrix(ALLEGRO_BITMAP *image);
 unsigned char *** allocateMemorySpaceForImage(const int * ptr_height, const  int * ptr_width);
 void meanFilter(const int * ptr_height, const int * ptr_width, unsigned char *** input_img, unsigned char *** output_img);
-int calculateMedian(unsigned char * arr, int length);
+void meanFilterNeon(const int * ptr_height, const int * ptr_width, unsigned char *** input_img, unsigned char *** output_img);
 void generateBitmapImage(int height, int width, unsigned char *** image, char * imageFileName);
 unsigned char * createBitmapFileHeader(int height, int width, int paddingSize);
 unsigned char * createBitmapInfoHeader(int height, int width);
